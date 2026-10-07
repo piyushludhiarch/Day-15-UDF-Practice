@@ -1,0 +1,194 @@
+[info] welcome to sbt 1.9.7 (Eclipse Adoptium Java 11.0.25)
+[info] loading project definition from /home/ludhi/scala-spark-30days/day15-udf-practice/project
+[info] loading settings for project day15-udf-practice from build.sbt ...
+[info] set current project to day15-udf-practice (in build file:/home/ludhi/scala-spark-30days/day15-udf-practice/)
+[info] compiling 1 Scala source to /home/ludhi/scala-spark-30days/day15-udf-practice/target/scala-2.12/classes ...
+[info] done compiling
+[info] running Day15App 
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/10/07 09:22:29 WARN Utils: Your hostname, lapi-99 resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/10/07 09:22:29 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/10/07 09:22:30 INFO SparkContext: Running Spark version 3.5.1
+26/10/07 09:22:30 INFO SparkContext: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+26/10/07 09:22:30 INFO SparkContext: Java version 11.0.25
+26/10/07 09:22:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/07 09:22:30 INFO ResourceUtils: ==============================================================
+26/10/07 09:22:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/07 09:22:30 INFO ResourceUtils: ==============================================================
+26/10/07 09:22:30 INFO SparkContext: Submitted application: Day 15 - UDF Practice
+26/10/07 09:22:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/07 09:22:30 INFO ResourceProfile: Limiting resource is cpu
+26/10/07 09:22:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/07 09:22:30 INFO SecurityManager: Changing view acls to: ludhi
+26/10/07 09:22:30 INFO SecurityManager: Changing modify acls to: ludhi
+26/10/07 09:22:30 INFO SecurityManager: Changing view acls groups to: 
+26/10/07 09:22:30 INFO SecurityManager: Changing modify acls groups to: 
+26/10/07 09:22:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ludhi; groups with view permissions: EMPTY; users with modify permissions: ludhi; groups with modify permissions: EMPTY
+26/10/07 09:22:30 INFO Utils: Successfully started service 'sparkDriver' on port 44357.
+26/10/07 09:22:30 INFO SparkEnv: Registering MapOutputTracker
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/ludhi/scala-spark-30days/day15-udf-practice/target/bg-jobs/sbt_b39a9afe/target/f01840d8/8e672e72/spark-unsafe_2.12-3.5.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+26/10/07 09:22:30 INFO SparkEnv: Registering BlockManagerMaster
+26/10/07 09:22:30 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/07 09:22:30 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/07 09:22:30 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/07 09:22:30 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-652e6c9b-5227-4c20-935a-2c157440ca74
+26/10/07 09:22:30 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/10/07 09:22:30 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/07 09:22:30 INFO Executor: Starting executor ID driver on host 10.255.255.254
+26/10/07 09:22:30 INFO Executor: OS info Linux, 5.15.167.4-microsoft-standard-WSL2, amd64
+26/10/07 09:22:30 INFO Executor: Java version 11.0.25
+26/10/07 09:22:30 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/10/07 09:22:30 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@3fb91d3b for default.
+26/10/07 09:22:30 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42233.
+26/10/07 09:22:30 INFO NettyBlockTransferService: Server created on 10.255.255.254:42233
+26/10/07 09:22:30 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/07 09:22:30 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.255.255.254, 42233, None)
+26/10/07 09:22:30 INFO BlockManagerMasterEndpoint: Registering block manager 10.255.255.254:42233 with 434.4 MiB RAM, BlockManagerId(driver, 10.255.255.254, 42233, None)
+26/10/07 09:22:30 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.255.255.254, 42233, None)
+26/10/07 09:22:30 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.255.255.254, 42233, None)
+===== DAY 15: UDF PRACTICE =====
+26/10/07 09:22:31 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/10/07 09:22:31 INFO SharedState: Warehouse path is 'file:/home/ludhi/scala-spark-30days/day15-udf-practice/spark-warehouse'.
+26/10/07 09:22:32 INFO CodeGenerator: Code generated in 170.275853 ms
+
+CUSTOMERS:
+26/10/07 09:22:33 INFO CodeGenerator: Code generated in 5.894463 ms
+26/10/07 09:22:33 INFO CodeGenerator: Code generated in 10.211076 ms
++-----------+--------+-----------------+
+|customer_id|customer|transaction_value|
++-----------+--------+-----------------+
+|1          |Amit    |2500.0           |
+|2          |Rahul   |15000.0          |
+|3          |Sara    |45000.0          |
+|4          |Neha    |75000.0          |
+|5          |John    |3000.0           |
++-----------+--------+-----------------+
+
+
+UDF SALARY CLASSIFICATION:
+26/10/07 09:22:33 INFO CodeGenerator: Code generated in 8.031766 ms
+26/10/07 09:22:33 INFO CodeGenerator: Code generated in 5.541474 ms
+26/10/07 09:22:33 INFO CodeGenerator: Code generated in 7.739947 ms
++-----------+--------+-----------------+-----------+
+|customer_id|customer|transaction_value|salary_band|
++-----------+--------+-----------------+-----------+
+|1          |Amit    |2500.0           |LOW        |
+|2          |Rahul   |15000.0          |MEDIUM     |
+|3          |Sara    |45000.0          |HIGH       |
+|4          |Neha    |75000.0          |HIGH       |
+|5          |John    |3000.0           |LOW        |
++-----------+--------+-----------------+-----------+
+
+
+BUILT-IN SPARK FUNCTION:
++-----------+--------+-----------------+--------------+
+|customer_id|customer|transaction_value|value_category|
++-----------+--------+-----------------+--------------+
+|1          |Amit    |2500.0           |LOW           |
+|2          |Rahul   |15000.0          |MEDIUM        |
+|3          |Sara    |45000.0          |HIGH          |
+|4          |Neha    |75000.0          |HIGH          |
+|5          |John    |3000.0           |LOW           |
++-----------+--------+-----------------+--------------+
+
+
+REGISTER UDF:
++-----------+--------+-----------------+-------------+
+|customer_id|customer|transaction_value|risk_category|
++-----------+--------+-----------------+-------------+
+|1          |Amit    |2500.0           |LOW_RISK     |
+|2          |Rahul   |15000.0          |LOW_RISK     |
+|3          |Sara    |45000.0          |MEDIUM_RISK  |
+|4          |Neha    |75000.0          |HIGH_RISK    |
+|5          |John    |3000.0           |LOW_RISK     |
++-----------+--------+-----------------+-------------+
+
+
+UDF VS BUILT-IN:
+UDF allows custom business logic.
+Built-in Spark functions are generally preferred because Spark can
+optimize them more effectively.
+26/10/07 09:22:33 INFO SparkContext: SparkContext is stopping with exitCode 0.
+26/10/07 09:22:33 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/10/07 09:22:33 INFO MemoryStore: MemoryStore cleared
+26/10/07 09:22:33 INFO BlockManager: BlockManager stopped
+26/10/07 09:22:33 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/10/07 09:22:33 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/10/07 09:22:33 INFO SparkContext: Successfully stopped SparkContext
+[success] Total time: 10 s, completed Oct 7, 2026, 9:22:33 AM
+26/10/07 09:22:33 INFO ShutdownHookManager: Shutdown hook called
+26/10/07 09:22:33 INFO ShutdownHookManager: Deleting directory /tmp/spark-790807c9-6f83-4261-bfe5-d43fcb6c9145
+26/10/07 09:22:33 ERROR Configuration: error parsing conf core-default.xml
+java.nio.file.NoSuchFileException: /home/ludhi/scala-spark-30days/day15-udf-practice/target/bg-jobs/sbt_b39a9afe/target/f9abe2a4/359669fc/hadoop-client-api-3.3.4.jar
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:149)
+	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1420)
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:841)
+	at java.base/java.util.zip.ZipFile$CleanableResource$FinalizableResource.<init>(ZipFile.java:867)
+	at java.base/java.util.zip.ZipFile$CleanableResource.get(ZipFile.java:856)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:258)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:187)
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:348)
+	at java.base/sun.net.www.protocol.jar.URLJarFile.<init>(URLJarFile.java:103)
+	at java.base/sun.net.www.protocol.jar.URLJarFile.getJarFile(URLJarFile.java:72)
+	at java.base/sun.net.www.protocol.jar.JarFileFactory.get(JarFileFactory.java:99)
+	at java.base/sun.net.www.protocol.jar.JarURLConnection.connect(JarURLConnection.java:125)
+	at java.base/sun.net.www.protocol.jar.JarURLConnection.getInputStream(JarURLConnection.java:155)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:3009)
+	at org.apache.hadoop.conf.Configuration.getStreamReader(Configuration.java:3105)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:3063)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:3036)
+	at org.apache.hadoop.conf.Configuration.loadProps(Configuration.java:2914)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2896)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1246)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1863)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1840)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager.shutdownExecutor(ShutdownHookManager.java:145)
+	at org.apache.hadoop.util.ShutdownHookManager.access$300(ShutdownHookManager.java:65)
+	at org.apache.hadoop.util.ShutdownHookManager$1.run(ShutdownHookManager.java:102)
+Exception in thread "Thread-4" java.lang.RuntimeException: java.nio.file.NoSuchFileException: /home/ludhi/scala-spark-30days/day15-udf-practice/target/bg-jobs/sbt_b39a9afe/target/f9abe2a4/359669fc/hadoop-client-api-3.3.4.jar
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:3089)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:3036)
+	at org.apache.hadoop.conf.Configuration.loadProps(Configuration.java:2914)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:2896)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:1246)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1863)
+	at org.apache.hadoop.conf.Configuration.getTimeDuration(Configuration.java:1840)
+	at org.apache.hadoop.util.ShutdownHookManager.getShutdownTimeout(ShutdownHookManager.java:183)
+	at org.apache.hadoop.util.ShutdownHookManager.shutdownExecutor(ShutdownHookManager.java:145)
+	at org.apache.hadoop.util.ShutdownHookManager.access$300(ShutdownHookManager.java:65)
+	at org.apache.hadoop.util.ShutdownHookManager$1.run(ShutdownHookManager.java:102)
+Caused by: java.nio.file.NoSuchFileException: /home/ludhi/scala-spark-30days/day15-udf-practice/target/bg-jobs/sbt_b39a9afe/target/f9abe2a4/359669fc/hadoop-client-api-3.3.4.jar
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:116)
+	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:55)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:149)
+	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+	at java.base/java.nio.file.Files.readAttributes(Files.java:1764)
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1420)
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:841)
+	at java.base/java.util.zip.ZipFile$CleanableResource$FinalizableResource.<init>(ZipFile.java:867)
+	at java.base/java.util.zip.ZipFile$CleanableResource.get(ZipFile.java:856)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:258)
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:187)
+	at java.base/java.util.jar.JarFile.<init>(JarFile.java:348)
+	at java.base/sun.net.www.protocol.jar.URLJarFile.<init>(URLJarFile.java:103)
+	at java.base/sun.net.www.protocol.jar.URLJarFile.getJarFile(URLJarFile.java:72)
+	at java.base/sun.net.www.protocol.jar.JarFileFactory.get(JarFileFactory.java:99)
+	at java.base/sun.net.www.protocol.jar.JarURLConnection.connect(JarURLConnection.java:125)
+	at java.base/sun.net.www.protocol.jar.JarURLConnection.getInputStream(JarURLConnection.java:155)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:3009)
+	at org.apache.hadoop.conf.Configuration.getStreamReader(Configuration.java:3105)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:3063)
+	... 10 more
